@@ -11,12 +11,11 @@ class ConstComp extends PureComponent {
 function CountLabel({ count  }:iCountLabel) {
   const color = count > 10 ? "red" : "blue";
   console.log(count)
-//   const ref = useRef();
-//   useEffect(() => {
-
-//     console.log(ref.current);
-// }, []);
-  return <span style={{ color }}>{count}</span>;
+  const ref = useRef();
+  useEffect(() => {
+    console.log(ref.current);
+}, []);
+  return <span style={{ color }} ref={ref}>{count}</span>;
 }
 
 export default function Counter() {
@@ -32,7 +31,7 @@ export default function Counter() {
       }}>
         <CountLabel count={count} />
         <ConstComp />
-        {/* <ConstComp /> */}
+
       </button>
     </div>
   );

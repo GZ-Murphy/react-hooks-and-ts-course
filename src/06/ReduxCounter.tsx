@@ -1,7 +1,5 @@
 import React,{useReducer} from "react";
 
-import { Provider } from "react-redux";
-import { json } from "stream/consumers";
 
 
 const initialState = { value: 0 };
